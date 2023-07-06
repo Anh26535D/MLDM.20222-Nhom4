@@ -16,13 +16,9 @@ Nhóm 4 - Nhập môn Học máy và Khai phá dữ liệu - 20222 - Đại họ
 Trò chơi với tên gọi Jo Wilder, là một trò chơi học tập ẩn chứa 18 câu hỏi trong diễn biến của trò chơi. 
  <b>Nhiệm vụ của người tham gia cuộc thi là dựa trên thông tin ghi lại trong quá trình chơi của người chơi, dự đoán người chơi này có thể đoán đúng được câu hỏi ẩn chứa trong trò chơi hay không.</b>
 * Mã nguồn gồm các file chính:
-  - description.csv: file csv mô tả các trường trong tập dữ liệu
-  - train.csv: tập huấn luyện sau khi được chia tách 
-  - test.csv: tập kiểm tra sau khi được chia tách
-  - split_data.py: file python dùng để chia tập dữ liệu gốc ra làm 2 file train.csv và test.csv, đồng thời cũng dùng để điền lại các giá trị không đồng nhất và giá trị khác biệt có trong tập dữ liệu
-  - exp: thư mục hoạt động chính, bao gồm:
-    - EDA.ipynb: file notebook cho việc khai phá dữ liệu
-    - Datapipeline.py: file python tạo pipeline xử lý dữ liệu
-    - OutlierHandling.py: file python xử lý outlier (viết theo api của scikit-learn)
-    - CrossValidation.ipynb: file notebook thử nghiệm mô hình và lựa chọn, đánh giá bằng kiểm định chéo
-    - Predict.ipynb: file notebook dự đoán lại trên tập kiểm tra
+  - data_preparation.ipynb: file chuẩn bị tập dữ liệu từ tập huấn luyện gốc
+  - lgbm_BO_hyperparams_tunning.ipynb: file chạy Bayesian Optimization cho tập dữ liệu đã chuẩn bị
+  - lgbm_boruta_feature_selection.ipynb: file chạy Boruta Feature Selection cho tập dữ liệu đã chuẩn bị
+  - lgbm_train_and_inference.ipynb: file submit kết quả lên kaggle (sau khi tải các file cần thiết lên kaggle)
+  - lgbm_validation.ipynb: file chạy LightGBM loại bỏ feature
+  - pre_eda.ipynb: file eda dữ liệu gốc
