@@ -7,7 +7,7 @@ Nhóm 4 - Nhập môn Học máy và Khai phá dữ liệu - 20222 - Đại họ
 * Nguyễn Trung Hiếu - 20204551 - hieu.nt204551@sis.hust.edu.vn
 * Trịnh Quang Quân - 20200511 - quan.tq@sis.hust.edu.vn
 ### Lời cảm ơn
-  Đây là tệp mã nguồn đồ án môn học Nhập môn Học máy và Khai phá dữ liệu do PGS. TS Thân Quang Khoát phụ trách. Lời đầu tiên, chúng em xin gửi lời cảm ơn đến giảng viên bộ môn là thầy Thân Quang Khoát, đã nhiệt tình giảng dạy và góp ý để chúng em hoàn thành bài tập lớn môn học. Những bài giảng trên nền tảng youtube của thầy là nguồn gợi ý thiết thực cho việc tìm các giải pháp cải thiện cho bài toán. Chúng em xin phép được gắn link youtube bài giảng của thầy tại đây: https://www.youtube.com/@thanquangkhoat4070. Cuối cùng, nhóm chúng em xin kính chúc thầy có thật nhiều sức khỏe, hành phúc và luôn thành công trong sự nghiệp giảng dạy của mình.
+  Đây là tệp mã nguồn đồ án môn học Nhập môn Học máy và Khai phá dữ liệu do PGS. TS Thân Quang Khoát phụ trách. Lời đầu tiên, chúng em xin gửi lời cảm ơn đến giảng viên bộ môn là thầy Thân Quang Khoát, đã nhiệt tình giảng dạy và góp ý để chúng em hoàn thành bài tập lớn môn học. Những bài giảng trên nền tảng youtube của thầy là nguồn gợi ý thiết thực cho việc tìm các giải pháp cải thiện cho bài toán, đặc biệt là phần đánh giá mô hình, từ đó giúp kết quả cuối tránh được overfit từ cuộc thi nhiều. Cuối cùng, nhóm chúng em xin kính chúc thầy có thật nhiều sức khỏe, hành phúc và luôn thành công trong sự nghiệp giảng dạy của mình.
 ## Hướng dẫn 
 * Đường link đến tập dữ liệu: https://www.kaggle.com/competitions/predict-student-performance-from-game-play/overview
 * Mô tả:
