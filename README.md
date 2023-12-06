@@ -23,19 +23,22 @@ The game named Jo Wilder is a hidden educational game containing 18 questions wi
     pip install -r requirements.txt
   ```
 
-## File structure
-  - data_preparation.ipynb: file chuẩn bị tập dữ liệu từ tập huấn luyện gốc
-  - lgbm_BO_hyperparams_tunning.ipynb: file chạy Bayesian Optimization cho tập dữ liệu đã chuẩn bị
-  - lgbm_boruta_feature_selection.ipynb: file chạy Boruta Feature Selection cho tập dữ liệu đã chuẩn bị
-  - lgbm_train_and_inference.ipynb: file submit kết quả lên kaggle (sau khi tải các file cần thiết lên kaggle)
-  - lgbm_validation.ipynb: file chạy LightGBM loại bỏ feature
-  - pre_eda.ipynb: file eda dữ liệu gốc
-* Thứ tự chạy file (chú ý các file csv ở đây không đảm bảo chạy sẽ ra y hệt do tính ngẫu nhiên của BO và BORUTA, các file chỉ là file được sử dụng để submit cuối cùng lên cuộc thi - trừ file hyperparams_tunning.csv với lí do bên dưới)
-  - data_preparation.ipynb sẽ sinh ra 3 file huấn luyện pickle gồm train_0_4.pkl, train_13_22.pkl, train_5_12.pkl
-  - lgbm_validation.ipynb sẽ sinh ra 1 file FEATURES_Q.csv, đây là file chứa các đặc trưng sẽ sử dụng cho bước tiếp theo
-  - lgbm_boruta_feature_selection.ipynb lấy các đặc trưng từ FEATURES_Q.csv, sau đó chạy sẽ được bộ đặc trưng lọc lượt 2 (chú ý code hiện tại chưa save tự động lại mà chỉ in ra, do đó tạm thời cần copy thủ công) ra file BORUTA_FEATURES.csv
-  - lgbm_BO_hyperparams_tunning.ipynb lấy file FEATURES_Q.csv để sinh ra tham số (chú ý code hiện tại chưa save tự động format chuẩn, do đó cần tự chỉnh lại format file sinh ra thủ công) ở file hyperparams_tunning.csv. Sau đó, cần dựa vào bộ tham số tùy chỉnh bằng tay cũ (đã có sẵn ở các file) để tinh chỉnh lại các tham số thủ công 1 lần nữa cho từng câu hỏi (18 câu hỏi), chú ý BO không đảm bảo sinh ra cùng 1 bộ tham số cho các lần chạy khác nhau.
-  - lgbm_train_and_inference.ipynb. file này cần được sử dụng trên kaggle. Vào trang chủ của cuộc thi theo đường dẫn bên trên, chọn new note book, sau đó upload file này lên. Ngoài ra, cần upload các file huấn luyện pickle ở bước 1, file BORUTA_FEATURES.csv ở bước 3, và file hyperparams_tunning.csv ở bước 4 (tùy chọn có thể không dùng, do vấn đề thời gian, nhóm chưa dùng bộ tham số này để submit được, mà mới chỉ dùng đặc trưng từ BORUTA).
+## File Structure
+  - data_preparation.ipynb: File preparing the dataset from the original training set.
+  - lgbm_BO_hyperparams_tuning.ipynb: File running Bayesian Optimization for the prepared dataset.
+  - lgbm_boruta_feature_selection.ipynb: File running Boruta Feature Selection for the prepared dataset.
+  - lgbm_train_and_inference.ipynb: File submitting results to Kaggle (after uploading the necessary files to Kaggle).
+  - lgbm_validation.ipynb: File running LightGBM to remove features.
+  - pre_eda.ipynb: File exploring the original data.
+
+## Usage
+* The order of running the files (note that the order of CSV files is not guaranteed due to the randomness of BO and BORUTA; these files are only used for the final submission to the competition - except for hyperparams_tuning.csv with the reason explained below):
+  - `data_preparation.ipynb` will generate 3 training pickle files: `train_0_4.pkl`, `train_13_22.pkl`, `train_5_12.pkl`.
+  - `lgbm_validation.ipynb` will generate 1 `FEATURES_Q.csv` file, which contains the features used for the next step.
+  - `lgbm_boruta_feature_selection.ipynb` takes features from `FEATURES_Q.csv`, then runs to get the second round of filtered features (note that the code currently does not save automatically, only prints out, so manual copying is temporarily required) to the `BORUTA_FEATURES.csv` file.
+  - `lgbm_BO_hyperparams_tuning.ipynb` takes the `FEATURES_Q.csv` file to generate parameters (note that the code currently does not save in a standardized format, so manual adjustment of the format of the generated file is needed) in the `hyperparams_tuning.csv` file. After that, it is necessary to use the customized parameters from the previous step (already available in the files) to manually fine-tune the parameters again for each question (18 questions). Note that BO does not guarantee the same parameter set for different runs.
+  - `lgbm_train_and_inference.ipynb`. This file needs to be used on Kaggle. Go to the home page of the competition using the link above, select a new notebook, and then upload this file. Additionally, upload the training pickle files from step 1, the `BORUTA_FEATURES.csv` file from step 3, and the `hyperparams_tuning.csv` file from step 4 (optional and may not be used due to time constraints; the team did not use this parameter set for successful submissions but only used features from BORUTA).
+
 
 ## Contributors
 * Đàm Việt Anh - 20204627 - anh.dv204627@sis.hust.edu.vn
